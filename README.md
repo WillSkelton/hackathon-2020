@@ -4,7 +4,7 @@ AutoSwiper is a dating website in which you create a profile for yourself and up
 
 ## How It Works
 
-The facial recognition software looks at the faces of the photos that you provide when creating your account. These photos are used as a training set for building a PyTorch MTCNN classifier, which then searches through the lists of user profiles to find faces which match your training set a certain threshold. Users who's profile match with your preferences are then stored on your profile. If two users match, then they would then be able to open up a chat with each other. 
+The facial recognition software looks at the faces of the photos that you provide when creating your account. PyTorch provides a pretrained MTCNN classifier which recognizes faces. This classifier is then applied to images containing faces and extracts the face from them. This eliminates people uploading photos which do not contain their faces. A separate facial recognition libarary then searches through the lists of user profiles to find faces which are similar the images provided by the user. Matches found are then stored on your profile. If two users match, then they would then be able to open up a chat with each other. 
 
 ## Getting Started
 
