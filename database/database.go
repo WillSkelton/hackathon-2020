@@ -18,6 +18,10 @@ func NewDB() (db *DB, err error) {
 }
 
 func (db *DB) PutUser(u *lib.User) (id int) {
+
+	if db.ID2Usr[u.UserID] != nil || db.Email2User[u.Email] != nil {
+		return -1
+	}
 	db.ID2Usr[u.UserID] = u
 	db.Email2User[u.Email] = u
 
